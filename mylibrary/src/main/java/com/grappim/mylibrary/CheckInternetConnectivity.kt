@@ -10,8 +10,8 @@ class InternetConnection {
   companion object {
     @SuppressLint("MissingPermission")
     fun isConnectedToInternet(context: Context): Boolean {
-      val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-      val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+//      val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+      val activeNetwork: NetworkInfo? = context.connectivityManager?.activeNetworkInfo
       return activeNetwork != null && activeNetwork.isConnectedOrConnecting
     }
   }
